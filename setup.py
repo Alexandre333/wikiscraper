@@ -7,7 +7,7 @@ long_description = (Path(__file__).parent / "README.md").read_text()
 
 # Setting up
 setup(
-    name="easywiki",
+    name="wikiscraper",
     version=VERSION,
     author="Alexandre Meyer",
     author_email="contact@alexandremeyer.fr",

@@ -1,12 +1,12 @@
-import easywiki as ew
+import wikiscraper as ws
 
 # Set the language page in Wikipedia for the query
 # ISO 639-1 & by default "en" for English
-ew.lang("fr")
+ws.lang("fr")
 
 # Search and get content by the URL slug of the article
 # Exemple : https://fr.wikipedia.org/wiki/Paris
-result = ew.searchBySlug("Paris")
+result = ws.searchBySlug("Paris")
 
 # Get article's title
 print(result.getTitle())

@@ -1,3 +1,21 @@
+Metadata-Version: 2.1
+Name: wikiscraper
+Version: 1.0.0
+Summary: Easy scraper that extracts data from Wikipedia articles thanks to its URL slug
+Home-page: https://github.com/Alexandre333/easy_wiki
+Author: Alexandre Meyer
+Author-email: contact@alexandremeyer.fr
+License: UNKNOWN
+Keywords: python,web scraping,wikipedia,slug
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
 # wikiscraper
 
 Easy scraper that extracts data from Wikipedia articles thanks to its URL slug : title, images, summary, sections paragraphs, sidebar info
@@ -38,7 +56,7 @@ result.getTitle()
 Sidebar
 ```python
 # Get value of the sidebar information label
-result.getSideInfo("Gentilé")
+result.getSideInfo("GentilÃ©")
 ```
 
 Summary
@@ -65,3 +83,4 @@ Sections
 # Exemple : https://fr.wikipedia.org/wiki/Paris#Politique_et_administration
 print(result.getSection('Politique et administration', 'Statut et organisation administrative', 'Historique')[0])
 ```
+
