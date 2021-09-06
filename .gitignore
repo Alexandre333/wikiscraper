@@ -1,8 +1,8 @@
 *.pyc
 *.pyo
 *.orig
-*wikiscraper.egg-info
 *~
 
 build/
 dist/
+wikiscraper.egg-info/
