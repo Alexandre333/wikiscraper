@@ -1,0 +1,8 @@
+*.pyc
+*.pyo
+*.orig
+*easywiki.egg-info
+*~
+
+build/
+dist/
