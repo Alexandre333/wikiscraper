@@ -1,4 +1,4 @@
-import easy_wiki as ew
+import easywiki as ew
 
 # Set the language page in Wikipedia for the query
 # ISO 639-1 & by default "en" for English

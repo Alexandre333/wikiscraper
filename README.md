@@ -14,7 +14,7 @@ $ pip install easywiki
 
 Import
 ```python
-import easy_wiki as ew
+import easywiki as ew
 ```
 
 Main request
