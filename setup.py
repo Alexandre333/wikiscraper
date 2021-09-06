@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DESCRIPTION = 'Easy scraper that extracts data from Wikipedia articles thanks to its URL slug'
 long_description = (Path(__file__).parent / "README.md").read_text()
 
@@ -12,7 +12,7 @@ setup(
     author="Alexandre Meyer",
     author_email="contact@alexandremeyer.fr",
     description=DESCRIPTION,
-    url='https://github.com/Alexandre333/easy_wiki',
+    url='https://github.com/Alexandre333/wikiscraper',
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),
