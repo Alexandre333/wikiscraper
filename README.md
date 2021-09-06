@@ -35,6 +35,7 @@ result = ws.searchBySlug("Paris")
 # Get article's title
 result.getTitle()
 ```
+
 Sidebar
 ```python
 # Get value of the sidebar information label
@@ -50,6 +51,7 @@ print(result.getSummary()[1])
 # Optional : Get the x paragraphs, starting from the beginning
 print(result.getSummary(2))
 ```
+
 Images
 ```python
 # Get all illustration images

@@ -1,7 +1,7 @@
 *.pyc
 *.pyo
 *.orig
-*easywiki.egg-info
+*wikiscraper.egg-info
 *~
 
 build/
