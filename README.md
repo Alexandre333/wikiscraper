@@ -1,6 +1,6 @@
 # easywiki
 
-Easy scraper that extracts data from Wikipedia articles thanks to its URL slug
+Easy scraper that extracts data from Wikipedia articles thanks to its URL slug : title, images, summary, sections paragraphs, sidebar info
 
 Developed by Alexandre MEYER - CC BY-NC-SA 2.0
 
