@@ -1,10 +1,10 @@
+Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+
 # wikiscraper
 
 Easy scraper that extracts data from Wikipedia articles thanks to its URL slug : title, images, summary, sections paragraphs, sidebar info
 
-Developed by Alexandre MEYER - CC BY 4.0
-
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
+Developed by Alexandre MEYER
 
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
