@@ -79,3 +79,10 @@ Sections
 # Exemple : https://fr.wikipedia.org/wiki/Paris#Politique_et_administration
 print(result.getSection('Politique et administration', 'Statut et organisation administrative', 'Historique')[0])
 ```
+
+## Errors
+> "Unable to find the requested query: please check the spelling of the slug"
+
+* Check if the spelling of the slug is correct
+* Check if the article exists
+* Check if the language set for the query matches with the slug (by default the search is for English articles)
