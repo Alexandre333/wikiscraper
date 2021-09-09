@@ -44,6 +44,7 @@ result = ws.searchBySlug("Paris")
 ```
 ## Examples
 
+Title H1
 ```python
 # Get article's title
 result.getTitle()
