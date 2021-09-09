@@ -16,6 +16,9 @@ class searchBySlug:
 		r = requests.get('https://'+LANG_ISO6391+'.wikipedia.org/wiki/'+self.slug)
 		self.misoSoup = BeautifulSoup(r.text, 'html.parser')
 
+		for s in self.misoSoup.select('sup'):
+			s.extract()
+
 	def getTitle(self):
 		title = self.misoSoup.find(id="firstHeading")
 

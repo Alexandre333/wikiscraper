@@ -31,6 +31,6 @@ print(img[0]) # Main image
 
 ### Sections ###
 # Get paragraphs from a specific section thanks to the parents' header title
-# All optional args : .getSection(h2Title, h3Title, h4Title)
+# All optional args in order : .getSection(h2Title, h3Title, h4Title)
 # Exemple : https://fr.wikipedia.org/wiki/Paris#Politique_et_administration
 print(result.getSection('Politique et administration', 'Statut et organisation administrative', 'Historique')[0])

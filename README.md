@@ -87,3 +87,7 @@ print(result.getSection('Politique et administration', 'Statut et organisation a
 * Check if the spelling of the slug is correct
 * Check if the article exists
 * Check if the language set for the query matches with the slug (by default the search is for English articles)
+
+## Versions
+1.1.0 = Error Handling
+1.0.0 = init
