@@ -39,7 +39,7 @@ ws.lang("fr")
 
 ```python
 # Search and get content by the URL slug of the article
-# (Exemple : https://fr.wikipedia.org/wiki/Paris)
+# (Example : https://fr.wikipedia.org/wiki/Paris)
 result = ws.searchBySlug("Paris")
 ```
 ## Examples
