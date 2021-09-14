@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-VERSION = '1.1.2'
+VERSION = '1.1.3'
 DESCRIPTION = 'Easy scraper that extracts data from Wikipedia articles thanks to its URL slug'
 long_description = (Path(__file__).parent / "README.md").read_text()
 
@@ -19,7 +19,7 @@ setup(
     install_requires=['requests', 'beautifulsoup4'],
     keywords=['python', 'web scraping', 'wikipedia', 'slug'],
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
         "Operating System :: Unix",

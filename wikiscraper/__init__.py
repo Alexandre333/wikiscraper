@@ -1,3 +1,10 @@
+#┌----------------------------------------------┐#
+#| Wikiscraper								    |#
+#| Developed by Alexandre MEYER                 |#
+#| License CC BY 4.0                            |#
+#| https://github.com/Alexandre333/wikiscraper  |#
+#└----------------------------------------------┘#
+
 import requests
 from bs4 import BeautifulSoup
 import bs4
@@ -24,11 +31,16 @@ class searchBySlug:
 
 		return title.text
 
-	def getSummary(self, limit=1000):
-		dataSummary = []
+	def getURL(self):
+		url = 'https://'+LANG_ISO6391+'.wikipedia.org/wiki/'+self.slug
+
+		return url
+
+	def getAbstract(self, limit=1000):
+		dataAbstract = []
 
 		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
-			dataSummary.append("Unable to find the requested query: please check the spelling of the slug")
+			dataAbstract.append("Unable to find the requested query: please check the spelling of the slug")
 		else:
 			if self.misoSoup.find(class_="infobox_v2"):
 				info_class_name = "infobox_v2"
@@ -44,12 +56,12 @@ class searchBySlug:
 					if tag.name == 'div':
 						break
 					else:
-						dataSummary.append(tag.text.replace(u'\n', u'').replace(u'\xa0', u' '))
+						dataAbstract.append(tag.text.replace(u'\n', u'').replace(u'\xa0', u' '))
 						tag = tag.nextSibling
 				else:
 					tag = tag.nextSibling
 
-		return dataSummary
+		return dataAbstract
 
 	def getSideInfo(self, label):
 		value_label = []

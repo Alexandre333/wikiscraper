@@ -11,17 +11,20 @@ result = ws.searchBySlug("Paris")
 # Get article's title
 print(result.getTitle())
 
+# Get article's URL
+print(result.getURL())
+
 ### Sidebar ###
 # Get value of the sidebar information label
 print(result.getSideInfo("Gentilé"))
 
-### Summary ###
-# Get all paragraphs of summary
-print(result.getSummary())
-# Get the second paragraph of summary
-print(result.getSummary()[1])
+### Abstract ###
+# Get all paragraphs of abstract
+print(result.getAbstract())
+# Get the second paragraph of abstract
+print(result.getAbstract()[1])
 # Optional : Get the x paragraphs, starting from the beginning
-print(result.getSummary(2))
+print(result.getAbstract(2))
 
 ### Images ###
 # Get all illustration images

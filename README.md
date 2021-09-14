@@ -44,10 +44,12 @@ result = ws.searchBySlug("Paris")
 ```
 ## Examples
 
-Title H1
+Title H1 & URL
 ```python
 # Get article's title
 result.getTitle()
+# Get article's URL
+result.getURL()
 ```
 
 Sidebar
@@ -56,14 +58,14 @@ Sidebar
 result.getSideInfo("Gentilé")
 ```
 
-Summary
+Abstract
 ```python
-# Get all paragraphs of summary
-print(result.getSummary())
-# Get the second paragraph of summary
-print(result.getSummary()[1])
+# Get all paragraphs of abstract
+print(result.getAbstract())
+# Get the second paragraph of abstract
+print(result.getAbstract()[1])
 # Optional : Get the x paragraphs, starting from the beginning
-print(result.getSummary(2))
+print(result.getAbstract(2))
 ```
 
 Images
