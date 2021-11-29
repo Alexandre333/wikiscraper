@@ -3,6 +3,7 @@
 #| Developed by Alexandre MEYER                 |#
 #| License CC BY 4.0                            |#
 #| https://github.com/Alexandre333/wikiscraper  |#
+#| 2021                                         |#
 #└----------------------------------------------┘#
 
 import requests
@@ -143,4 +144,34 @@ class searchBySlug:
 					else:
 						section = section.nextSibling
 
+		return content
+
+	def getContentsTable(self, subcontents=False):
+		if not subcontents:
+			content = []
+		else:
+			content = {}
+
+		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
+			content.append("Unable to find the requested query: please check the spelling of the slug")
+		else:
+			all_li = self.misoSoup.find(class_="toctitle").findNext('ul')
+			for li in all_li:
+				if not li.find('a') == -1:
+					li_value = li.find('a').find(class_="toctext").text
+					
+					if not subcontents:
+						content.append(li_value)
+					else:
+						if li.find('ul'):
+							all_li_of_ul = li.find('a').findNext('ul')
+							list_li = []
+							for li_of_ul in all_li_of_ul:
+								if not li_of_ul.find('a') == -1:
+									li_of_ul = li_of_ul.find('a').find(class_="toctext").text
+									list_li.append(li_of_ul)
+								
+								content[li_value] = list_li
+						else:
+							content[li_value] = []
 		return content

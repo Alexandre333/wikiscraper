@@ -33,6 +33,12 @@ img = result.getImage()
 print(img[0]) # Main image
 
 ### Sections ###
+# Get table of contents
+# Only first headlines
+print(result.getContentsTable())
+# All headelines (first and second levels)
+print(result.getContentsTable(subcontents=True))
+
 # Get paragraphs from a specific section thanks to the parents' header title
 # All optional args in order : .getSection(h2Title, h3Title, h4Title)
 # Exemple : https://fr.wikipedia.org/wiki/Paris#Politique_et_administration
