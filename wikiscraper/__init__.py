@@ -43,13 +43,17 @@ class searchBySlug:
 		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
 			dataAbstract.append("Unable to find the requested query: please check the spelling of the slug")
 		else:
-			if self.misoSoup.find(class_="infobox_v2"):
+			if self.misoSoup.find(class_="infobox_v3"):
+				info_class_name = "infobox_v3"
+			elif self.misoSoup.find(class_="infobox_v2"):
 				info_class_name = "infobox_v2"
 			else:
 				info_class_name = "infobox"
 
-			tag = self.misoSoup.find(class_=info_class_name).findNext('p')
-
+			tag = self.misoSoup.find(class_=info_class_name).find_next_sibling('p')
+			print('----------')
+			print(tag)
+			print('----------')
 			# Thanks salmanwahed
 			# https://stackoverflow.com/questions/34585206/beautiful-soup-find-all-p-until-form
 			for i in range(limit):
@@ -70,7 +74,9 @@ class searchBySlug:
 		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
 			value_label.append("Unable to find the requested query: please check the spelling of the slug")
 		else:
-			if self.misoSoup.find(class_="infobox_v2"):
+			if self.misoSoup.find(class_="infobox_v3"):
+				info_class_name = "infobox_v3"
+			elif self.misoSoup.find(class_="infobox_v2"):
 				info_class_name = "infobox_v2"
 			else:
 				info_class_name = "infobox"
@@ -85,10 +91,10 @@ class searchBySlug:
 						row_label = tr.find('th').text
 						
 					if row_label == label:
-						if tr.find('td').find('a', attrs={'class': None}):
-							row_value = tr.find('td').find('a', attrs={'class': None}).text
-						else:
+						if tr.find('td').text:
 							row_value = tr.find('td').text
+						else:
+							row_value = tr.find('td').find('a', attrs={'class': None}).text
 
 						row_value = row_value.replace(u'\xa0', u' ').replace(u'\n', u'')
 						value_label.append(row_value)
