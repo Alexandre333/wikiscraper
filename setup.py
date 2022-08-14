@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-VERSION = '1.1.5'
+VERSION = '1.1.6'
 DESCRIPTION = 'Easy scraper that extracts data from Wikipedia articles thanks to its URL slug'
 long_description = (Path(__file__).parent / "README.md").read_text()
 

@@ -51,9 +51,7 @@ class searchBySlug:
 				info_class_name = "infobox"
 
 			tag = self.misoSoup.find(class_=info_class_name).find_next_sibling('p')
-			print('----------')
-			print(tag)
-			print('----------')
+	
 			# Thanks salmanwahed
 			# https://stackoverflow.com/questions/34585206/beautiful-soup-find-all-p-until-form
 			for i in range(limit):
@@ -161,12 +159,19 @@ class searchBySlug:
 		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
 			content.append("Unable to find the requested query: please check the spelling of the slug")
 		else:
-			all_li = self.misoSoup.find(class_="toctitle").findNext('ul')
+			if self.misoSoup.find(class_="toctitle"):
+				all_li = self.misoSoup.find(class_="toctitle").findNext('ul')
+				class_name_content = "toctext"
+			else:
+				all_li = self.misoSoup.find(class_="sidebar-toc-header").findNext('ul')
+				class_name_content = "sidebar-toc-text"
+
 			for li in all_li:
 				if not li.find('a') == -1:
-					li_value = li.find('a').find(class_="toctext").text
+					li_value = li.find('a').find(class_=class_name_content).text
 					
 					if not subcontents:
+						li_value = li_value.replace(u'\xa0', u' ').replace(u'\n', u'')
 						content.append(li_value)
 					else:
 						if li.find('ul'):
@@ -174,7 +179,8 @@ class searchBySlug:
 							list_li = []
 							for li_of_ul in all_li_of_ul:
 								if not li_of_ul.find('a') == -1:
-									li_of_ul = li_of_ul.find('a').find(class_="toctext").text
+									li_of_ul = li_of_ul.find('a').find(class_=class_name_content).text
+									li_of_ul = li_of_ul.replace(u'\xa0', u' ').replace(u'\n', u'')
 									list_li.append(li_of_ul)
 								
 								content[li_value] = list_li
