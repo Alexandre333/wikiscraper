@@ -82,20 +82,21 @@ class searchBySlug:
 			all_tr = self.misoSoup.find(class_=info_class_name).findAll('tr')
 
 			for tr in all_tr:
-				if tr.find('th', attrs={'scope':'row'}):
+				if tr.find('th'):
 					if tr.find('th').find('a'):
 						row_label = tr.find('th').find('a').text
 					else:
 						row_label = tr.find('th').text
 						
 					if row_label == label:
-						if tr.find('td').text:
-							row_value = tr.find('td').text
-						else:
-							row_value = tr.find('td').find('a', attrs={'class': None}).text
+						if tr.find('td'):
+							if tr.find('td').text:
+								row_value = tr.find('td').text
+							else:
+								row_value = tr.find('td').find('a', attrs={'class': None}).text
 
-						row_value = row_value.replace(u'\xa0', u' ').replace(u'\n', u'')
-						value_label.append(row_value)
+							row_value = row_value.replace(u'\xa0', u' ').replace(u'\n', u'')
+							value_label.append(row_value)
 
 		return value_label
 
