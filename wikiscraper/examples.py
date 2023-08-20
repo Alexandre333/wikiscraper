@@ -1,3 +1,12 @@
+#┌----------------------------------------------┐#
+#| Wikiscraper								    |#
+#| Developed by Alexandre MEYER                 |#
+#| License CC BY 4.0                            |#
+#| https://github.com/Alexandre333/wikiscraper  |#
+#| 2021 - 2023                                  |#
+#| Example file                 				|#
+#└----------------------------------------------┘#
+
 import wikiscraper as ws
 
 # Set the language page in Wikipedia for the query
@@ -34,7 +43,7 @@ print(img[0]) # Main image
 
 ### Sections ###
 # Get table of contents
-# Only first headlines
+# Only first level headlines
 print(result.getContentsTable())
 # All headelines (first and second levels)
 print(result.getContentsTable(subcontents=True))
