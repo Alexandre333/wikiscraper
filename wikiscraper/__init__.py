@@ -3,7 +3,7 @@
 #| Developed by Alexandre MEYER                 |#
 #| License CC BY 4.0                            |#
 #| https://github.com/Alexandre333/wikiscraper  |#
-#| 2021                                         |#
+#| 2021 - 2023                                  |#
 #└----------------------------------------------┘#
 
 import requests
@@ -106,7 +106,7 @@ class searchBySlug:
 		if self.misoSoup.find('div', attrs={'class': "noarticletext"}):
 			images.append("Unable to find the requested query: please check the spelling of the slug")
 		else:
-			thumbs = self.misoSoup.findAll('a', class_="image")
+			thumbs = self.misoSoup.findAll('a', class_="mw-file-description")
 
 			for thumb in thumbs:
 				image = "https:"+thumb.find('img').attrs['src']
@@ -164,8 +164,8 @@ class searchBySlug:
 				all_li = self.misoSoup.find(class_="toctitle").findNext('ul')
 				class_name_content = "toctext"
 			else:
-				all_li = self.misoSoup.find(class_="sidebar-toc-header").findNext('ul')
-				class_name_content = "sidebar-toc-text"
+				all_li = self.misoSoup.find(class_="vector-toc").findNext('ul')
+				class_name_content = "vector-toc-text"
 
 			for li in all_li:
 				if not li.find('a') == -1:

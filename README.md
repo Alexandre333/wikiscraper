@@ -1,5 +1,5 @@
 [![CC BY 4.0][cc-by-shield]][cc-by]
-[![Downloads](https://pepy.tech/badge/wikiscraper)](https://pepy.tech/project/wikiscraper)
+[![Downloads](https://static.pepy.tech/badge/wikiscraper)](https://pepy.tech/project/wikiscraper)
 
 # wikiscraper
 
